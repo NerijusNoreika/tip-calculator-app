@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+  <link rel="stylesheet" href="./css/main.css">
+  <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <main id="app">
+    <div class="calculations">
+      <h2>Bill</h2>
+      <input placeholder="0" v-model.number="bill" class="calculations__bill" type="number">
+      <h2>Select Tip %</h2>
+
+      <div class="tip-group">
+
+        <button @click="applyStyle(button.id)" :key="button.id" :class="{active : button.active}"
+          v-for="button in buttons" class="calculations__button"> {{ button.value }}%</button>
+
+        <input @input="countCustom" v-model="customTip" class="calculations__custom" placeholder="Custom"
+          v-model="customTip" maxlength="2" max="99" type="number">
+      </div>
+      <h2>Number of People</h2>
+      <input :class="{ error : peopleCountError}" placeholder="1" id="peopleCount" v-model="numPeople" type="number">
+    </div>
+
+    <div class="result">
+
+      <div class="result__tip">
+        <div class="result__header">
+          <span class="result__amount">Tip Amount</span>
+          <span class="result__person">/ person</span>
+        </div>
+        <div class="result__digit">${{ tipPerPerson }}</div>
+      </div>
+
+      <div class="result__total">
+
+        <div class="result__header">
+          <span class="result__amount">Total</span>
+          <span class="result__person">/ person</span>
+
+        </div>
+        <div class="result__digit">${{ totalPerPerson }}</div>
+
+      </div>
+
+      <button :class="{ disabled : resetDisabled }" :disabled="resetDisabled" @click="reset" class="result__button">
+        Reset
+      </button>
+    </div>
+
+
+
+  </main>
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

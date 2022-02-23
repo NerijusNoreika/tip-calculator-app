@@ -1,0 +1,209 @@
+/*****************************************************
+                         VARS                           
+*****************************************************/
+/*****************************************************
+                         RESETS                           
+*****************************************************/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  background: #c5e4e7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #c5e4e7 url("./../img/logo.svg") no-repeat center 5%;
+  font-family: "Space Mono", monospace;
+}
+
+input, button {
+  font-family: "Space Mono", monospace;
+}
+
+input:focus {
+  outline-color: #9fe8df;
+}
+
+input.error {
+  outline: 1px solid #e5ad9e;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/*****************************************************
+                         MAIN                           
+*****************************************************/
+#app {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1240px;
+  margin-left: 15px;
+  margin-right: 15px;
+  gap: 2rem;
+}
+
+/*****************************************************
+                         CALCULATIONS                           
+*****************************************************/
+.calculations__button, .calculations__custom {
+  border-radius: 5px;
+}
+.calculations h2 {
+  color: #7f9c9f;
+  font-size: 1rem;
+}
+.calculations h2:first-child {
+  margin-top: 0;
+}
+.calculations h2 {
+  margin-top: 2.5rem;
+}
+.calculations__bill, .calculations #peopleCount {
+  background: #F3F8FB;
+  color: #00474b;
+  text-align: right;
+  padding: 0.5rem 0.8rem;
+  font-weight: 700;
+  font-size: 24px;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  background-image: url("./../img/icon-dollar.svg");
+  background-repeat: no-repeat;
+  background-position: 1rem 50%;
+}
+.calculations #peopleCount {
+  background-image: url("./../img/icon-person.svg");
+}
+.calculations__button {
+  color: white;
+  background: #00494d;
+  padding: 0.5rem 1rem;
+  border: none;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+.calculations__button:hover {
+  cursor: pointer;
+  background: #26c2ad;
+  color: #00474b;
+}
+.calculations__button.active {
+  background: #26c2ad;
+  color: #00474b;
+}
+.calculations .tip-group {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+.calculations__custom {
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+  color: #00474b;
+  background: #f3f8fb;
+  border: none;
+}
+
+.result {
+  background: #00474b;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.result__tip, .result__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.result__total {
+  margin-top: 3rem;
+}
+.result__digit {
+  color: #26c2ad;
+  font-size: 2.5rem;
+}
+.result__header {
+  display: flex;
+  flex-direction: column;
+}
+.result__amount {
+  color: white;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.result__person {
+  color: #26c2ad;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #6b9da1;
+}
+.result__button {
+  margin-top: auto;
+  background: #26c2ad;
+  color: #00474b;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  padding: 0.8rem 1rem;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.result__button.disabled {
+  background: #0d686d;
+}
+.result__button.disabled:hover {
+  background: #0d686d;
+  cursor: not-allowed;
+}
+.result__button:hover {
+  background: #9fe8df;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  #app {
+    margin-top: 8rem;
+    grid-template-columns: 1fr;
+  }
+
+  .result {
+    padding: 2rem 1rem;
+  }
+  .result__digit {
+    font-size: 1.5rem;
+  }
+  .result__button {
+    margin-top: 2rem;
+  }
+}
+@media screen and (max-width: 420px) {
+  .calculations .tip-group {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}/*# sourceMappingURL=main.css.map */
