@@ -168,6 +168,7 @@ input[type=number] {
         margin-top: 3rem;
     }
     &__digit {
+        font-weight: 700;
         color: #26c2ad;
         font-size: 2.5rem;
     }
@@ -177,8 +178,9 @@ input[type=number] {
     }
     &__amount {
         color: white;
-        font-weight: 500;
         font-size: .9rem;
+        font-weight: 700;
+        margin-bottom: 0.3rem;
     }
     &__person {
         color: #26c2ad;
