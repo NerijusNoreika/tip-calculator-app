@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Live URL](https://nerijusnoreika.github.io/tip-calculator-app/)
 
 ## My process
 
@@ -43,4 +43,4 @@ Users should be able to:
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
+- [LinkedIn](https://www.linkedin.com/in/nerijus-noreika-225804154/)
